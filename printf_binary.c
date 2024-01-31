@@ -9,9 +9,14 @@ int printf_bin(va_list par) {
   unsigned int num = va_arg(par, unsigned int);
   int cont = 0;
 
-  int startPrinting = 0;  // Flag to start printing binary digits
+  int startPrinting = 0;
 
-  for (int i = 31; i >= 0; i--) {
+  /**
+   * Flag to start printing binary digits
+   **/
+  
+  int i;
+  for ( i = 31; i >= 0; i--) {
     int bit = (num >> i) & 1;
 
     if (bit || startPrinting) {
@@ -21,8 +26,10 @@ int printf_bin(va_list par) {
     }
   }
 
-  // If no binary digit was printed, print '0'
-  if (cont == 0) {
+  /**
+   * If no binary digit was printed, print '0'
+   **/  
+if (cont == 0) {
     _putchar('0');
     cont++;
   }

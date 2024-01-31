@@ -28,3 +28,11 @@ int printf_strrev(va_list pars);
 int printf_pointer(va_list par);
 int printf_hex_aux(unsigned long int digit);
 int printf_hex(va_list par);
+int printf_oct(va_list par);
+int print_number(int n);
+int printf_int(va_list pars);
+int printf_dec(va_list pars);
+int printf_char(va_list par);
+int printf_bin(va_list par);
+
+

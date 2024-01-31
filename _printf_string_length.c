@@ -26,3 +26,4 @@ int _strlen_const(const char *b) {
 
   return p;
   
+}

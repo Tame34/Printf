@@ -6,14 +6,14 @@
  * Return: number of characters printed
  */
 int printf_pointer(va_list par) {
-  void *p = va_arg(par, void*);
+  void *b = va_arg(par, void*);
 
-  if (p == NULL) {
+  if (b == NULL) {
     return printf_string("(nil)");
   }
 
   _putchar('0');
   _putchar('x');
     
-  return printf_hex_aux((unsigned long int)p) + 2;
+  return printf_hex_aux((unsigned long int)b) + 2;
 }

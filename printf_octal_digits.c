@@ -6,11 +6,11 @@
  * Return: Count of characters printed
  */
 int printf_oct(va_list par) {
-  unsigned int num = va_arg(val, unsigned int);
+  unsigned int digit = va_arg(par, unsigned int);
   int counter = 0;
 
   // Calculate the number of octal digits required
-  unsigned int temp = num;
+  unsigned int temp = digit;
   while (temp > 0) {
     temp /= 8;
     counter++;
@@ -37,6 +37,6 @@ int printf_oct(va_list par) {
   // Free the allocated memory for the array
   free(array);
 
-  // Return the total count of octal digits printed
+  // Return the total count¢ of octal digits printed
   return counter;
 }

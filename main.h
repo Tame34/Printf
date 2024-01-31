@@ -15,8 +15,14 @@
  */
 typedef struct format {
   char *id;
-  int (*f)(void);  //Function takes no arguments
-} ConversionSpecifier;
+  int (*f)(void);
+
+/** 
+ * Function takes no arguments
+**/
+  
+} 
+ConversionSpecifier;
 
 
 int _strlength(char *b);

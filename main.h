@@ -1,0 +1,30 @@
+#ifndef MAIN_H_
+#define MAIN_H
+
+#include <stdio.h>
+#include <strarg.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+
+/**
+ * struct format: defines a conversion specifier and its corresponding function
+ * @id: character pointer representing the specifier (e.g., 'l', 'h')
+ * @f: function pointer for the conversion specifier
+ */
+typedef struct format {
+  char *id;
+  int (*f)(void);  //Function takes no arguments
+} ConversionSpecifier;
+
+
+int _strlength(char *b);
+int _strlen_const(const char *b);
+int _putchar (char p);
+int printf_ROT13(va_list pars);
+int printf_string(va_list par);
+int printf_strrev(va_list pars);
+int printf_pointer(va_list par);
+int printf_hex_aux(unsigned long int digit);
+int printf_hex(va_list par);

@@ -41,7 +41,7 @@ int printf_dec(va_list pars);
 int printf_char(va_list par);
 int printf_bin(va_list par);
 int printf_unsigned(va_list pars);
-
+int _printf(const char *format, ...);
 
 
 #endif

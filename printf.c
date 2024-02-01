@@ -5,11 +5,12 @@
  * @format: format specifier.
  * Return: the length of the printed string.
  */
+int m;
+
 int _printf(const char *format, ...) {
   if (format == NULL || format[0] == '\0')
     return -1;
 
-  int m;
   int len =0;
   int match_found = 0;
   int j = 0;

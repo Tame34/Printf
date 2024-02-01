@@ -5,19 +5,32 @@
  * @format: format specifier.
  * Return: the length of the printed string.
  */
-int m;
+
+
+
+ConversionSpecifier m[] = {
+			   {"%s", printf_string}, {"%c", printf_char},
+			   {"%i", printf_int}, {"%d", printf_dec}, {"%r", \
+								    printf_strrev},
+			   {"%R", printf_ROT13}, {"%b", printf_bin}, {"%u"\
+								      , printf_unsigned},
+			   {"%o", printf_oct}, {"%x", printf_hex}, {"%p", \
+								    printf_pointer}
+};
+
+
+
+
 
 int _printf(const char *format, ...) {
   if (format == NULL || format[0] == '\0')
     return -1;
-
+  
   int len =0;
   int match_found = 0;
   int j = 0;
-  
-  
-  va_list pars;
-  va_start(pars, format);
+  va_list pars;  
+    va_start(pars, format);
 
   
   while (*format) {
@@ -54,12 +67,3 @@ int _printf(const char *format, ...) {
 /**
  * Add the conversion specifier structure
  */
-
-  ConversionSpecifier m[] = {
-
-			     {"%s", printf_string}, {"%c", printf_char},
-		     {"%i", printf_int}, {"%d", printf_dec}, {"%r", printf_strrev},
-		     {"%R", printf_ROT13}, {"%b", printf_bin}, {"%u", printf_unsigned},
-		     {"%o", printf_oct}, {"%x", printf_hex}, {"%p", printf_pointer}
-
-};

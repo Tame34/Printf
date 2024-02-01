@@ -15,7 +15,7 @@ int printf_number(int n) {
   }
 
   if (n / 10 != 0) {
-    i += print_number(n / 10);
+    i += printf_number(n / 10);
   }
 
   _putchar(n % 10 + '0');
@@ -28,7 +28,7 @@ int printf_number(int n) {
  * Return: number of characters printed
  */
 int printf_int(va_list pars) {
-  return print_number(va_arg(pars, int));
+  return printf_number(va_arg(pars, int));
 }
 
 /**
@@ -37,5 +37,5 @@ int printf_int(va_list pars) {
  * Return: number of characters printed
  */
 int printf_dec(va_list pars) {
-  return print_number(va_arg(pars, int));
+  return printf_number(va_arg(pars, int));
 }

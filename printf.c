@@ -23,13 +23,18 @@ ConversionSpecifier m[] = {
 
 
 int _printf(const char *format, ...) {
-  if (format == NULL || format[0] == '\0')
-    return -1;
-  
+
   int len =0;
   int match_found = 0;
   int j = 0;
-  va_list pars;  
+  int m_len;
+  va_list pars;
+  
+  if (format == NULL || format[0] == '\0')
+    return -1;
+  
+  
+                 
     va_start(pars, format);
 
   
@@ -38,7 +43,13 @@ int _printf(const char *format, ...) {
       format++;
    
 
-      for (j = 0; j < sizeof(m) / sizeof(m[0]); j++) {
+      m_len = sizeof(m) / sizeof(m[0]);
+      for (j = 0; j < m_len; j++) {
+         }
+
+
+
+      {
 	if (format[0] == m[j].id[0] && format[1] == m[j].id[1]) {
 	  len += m[j].f(pars);
 	  format += 2;

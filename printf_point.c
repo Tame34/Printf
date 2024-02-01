@@ -9,7 +9,7 @@ int printf_pointer(va_list par) {
   void *b = va_arg(par, void*);
 
   if (b == NULL) {
-    return printf_string("(nil)");
+    return printf_string("(null)");
   }
 
   _putchar('0');

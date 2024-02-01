@@ -9,17 +9,22 @@ int _printf(const char *format, ...) {
   if (format == NULL || format[0] == '\0')
     return -1;
 
+  int m;
+  int len =0;
+  int match_found = 0;
+  int j = 0;
+  
+  
   va_list pars;
   va_start(pars, format);
 
-  int len = 0;
-
+  
   while (*format) {
     if (*format == '%') {
       format++;
-      int match_found = 0;
+   
 
-      for (int j = 0; j < sizeof(m) / sizeof(m[0]); j++) {
+      for (j = 0; j < sizeof(m) / sizeof(m[0]); j++) {
 	if (format[0] == m[j].id[0] && format[1] == m[j].id[1]) {
 	  len += m[j].f(pars);
 	  format += 2;
@@ -44,25 +49,16 @@ int _printf(const char *format, ...) {
   return len;
 }
 
+
 /**
- * _putchar - writes a character to stdout.
- * @p: the character to print.
- * Return: 1 on success, -1 on error.
+ * Add the conversion specifier structure
  */
-int _putchar(char p) {
-  return write(1, &p, 1);
-}
 
-// Add the conversion specifier structure
-/** ConversionSpecifier m[] = {
-		     {"%s", printf_string}, {"%c", printf_char},
-		     {"%%", printf_37},
-		     {"%i", printf_int}, {"%d", printf_dec}, {"%r", printf_srev},
-		     {"%R", printf_rot13}, {"%b", printf_bin}, {"%u", printf_unsigned},
-		     {"%o", printf_oct}, {"%x", printf_hex}, {"%X", printf_HEX},
-		     {"%S", printf_exclusive_string}, {"%p", printf_pointer}
-		     };
-*/
+  ConversionSpecifier m[] = {
 
-// Add other functions here...
+			     {"%s", printf_string}, {"%c", printf_char},
+		     {"%i", printf_int}, {"%d", printf_dec}, {"%r", printf_strrev},
+		     {"%R", printf_ROT13}, {"%b", printf_bin}, {"%u", printf_unsigned},
+		     {"%o", printf_oct}, {"%x", printf_hex}, {"%p", printf_pointer}
 
+};

@@ -3,7 +3,7 @@
  * @b: Pointer of data type (char)
  * Return: p after execution
  **/
-int _strlength(char *b) {
+int printf_strlength(char *b) {
   int p = 0;
   do {
     p++;
@@ -17,7 +17,7 @@ ted string (const char *b)
 * Return: p after execution
 **/
 
-int _strlen_const(const char *b) {
+int printf_strlen_constant(const char *b) {
   int p = 0;
 
   do {

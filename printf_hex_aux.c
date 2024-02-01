@@ -9,8 +9,10 @@ int printf_hex_aux(unsigned long int digit) {
   
   unsigned long int temp;
   int counter =0;
+  long int *array;
+  int i;
+  
   temp = digit;
-
   
   /**
    * Calculate the number of hexadecimal digits required
@@ -27,7 +29,6 @@ while (temp != 0);
  * Allocate memory for an array to store hexadecimal digits
  */    
 
- long int *array;
 
  array = malloc(counter * sizeof(long int));
 
@@ -44,7 +45,6 @@ while (temp != 0);
      * Populate the array with the hexadecimal digits
      */
 
-    int i;
 
 for (i = 0; i < counter; i++) {
         array[i] = digit % 16;

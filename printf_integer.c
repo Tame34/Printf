@@ -5,7 +5,7 @@
  * @n: integer to print
  * Return: number of characters printed
  */
-int print_number(int n) {
+int printf_number(int n) {
   int i = 0;
 
   if (n < 0) {

@@ -8,6 +8,9 @@
 int printf_oct(va_list par) {
   unsigned int digit;
   int counter = 0;
+  int *array;
+  int i;
+  unsigned int temp;
   
   digit= va_arg(par, unsigned int);
 
@@ -15,7 +18,7 @@ int printf_oct(va_list par) {
    * Calculate the number of octal digits required
    **/
   
-  unsigned int temp;
+ 
   
  temp  = digit;
   while (temp > 0) {
@@ -27,8 +30,7 @@ int printf_oct(va_list par) {
    * Allocate memory for an array to store octal digits
    **/
   
-  int *array;
-  array= malloc(counter * sizeof(int));
+   array= malloc(counter * sizeof(int));
   if (array == NULL) {
     return 0;
 
@@ -41,7 +43,7 @@ int printf_oct(va_list par) {
    * Populate the array with the octal digits
    **/
 
-  int i;
+  
 temp = digit;
  for (i = 0; i < counter; i++) {
     array[i] = temp % 8;

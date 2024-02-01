@@ -17,16 +17,16 @@ typedef struct format {
   char *id;
   int (*f)(void);
 
-/** 
- * Function takes no arguments
-**/
+  /**
+   *Function takes no arguments
+   */
   
 } 
 ConversionSpecifier;
 
 
-int _strlength(char *b);
-int _strlen_const(const char *b);
+int printf_strlength(char *b);
+int printf_strlen_constant(const char *b);
 int _putchar (char p);
 int printf_ROT13(va_list pars);
 int printf_string(va_list par);
@@ -40,5 +40,8 @@ int printf_int(va_list pars);
 int printf_dec(va_list pars);
 int printf_char(va_list par);
 int printf_bin(va_list par);
+int printf_unsigned(va_list pars);
+
+
 
 #endif

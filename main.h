@@ -24,7 +24,6 @@ typedef struct format {
 } 
 ConversionSpecifier;
 
-
 int printf_strlength(const char *b);
 int printf_strlen_constant(const char *b);
 int _putchar (char p);

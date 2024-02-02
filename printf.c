@@ -77,4 +77,14 @@ int _printf(const char *format, ...) {
 
 /**
  * Add the conversion specifier structure
- */
+ 
+int handle_percent_r(va_list pars) {
+  
+   * Implement the behavior for %r (e.g., print it as is)
+     
+putchar('%');
+  putchar('r');
+  return 2;
+
+ }
+*/
